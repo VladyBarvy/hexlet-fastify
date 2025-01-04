@@ -2,7 +2,18 @@
 extends ../views/layouts/page.pug
 
 block content
-    p How many trees and flowers are growing on my street?
+  p How many trees and flowers are growing on my street?
+
+block search
+  <form action="/" method="get">
+    <input type="search" required name="term">
+    <input type="submit" value="Искать">
+  </form>
 
 block footer
   a(href='https://github.com/VladyBarvy/hexlet-fastify') Project's GitHub
+
+block search_ok
+  form(role = 'form' method = 'GET' action = '/')
+    input(type = 'search', name = 'term', value = term)
+    input(type = 'submit' value = 'search')
